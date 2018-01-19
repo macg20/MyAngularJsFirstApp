@@ -2,9 +2,16 @@
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 <body>
-    <div ng-app="">
+    <!--ng-app directive show who is owner Angular application-->
+    <div ng-app="" ng-init="owner='macg20'">
         <p>Name: <input type="text" ng-model="name"></p>
         <p>Hello {{name}}</p>
+        <p>Application Owner: <span ng-bind="owner"></span></p>
+        <p>Result 5+5: {{5+5}}</p>
+        <p></p>
     </div>
+
+
+
 </body>
 </html>
