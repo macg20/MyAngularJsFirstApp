@@ -1,15 +1,20 @@
 <html>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers/firstController.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
 <body>
     <!--ng-app directive show who is owner Angular application-->
-    <div ng-app="" ng-init="owner='macg20'">
+    <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController">
         <p>Name: <input type="text" ng-model="name"></p>
         <p>Hello {{name}}</p>
         <p>Application Owner: <span ng-bind="owner"></span></p>
         <p>Result 5+5: {{5+5}}</p>
         <p></p>
+        <p>Owner FullName: {{firstName + " " + lastName}}</p>
     </div>
+
 
 
 
