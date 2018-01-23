@@ -1,18 +1,29 @@
 <html>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controllers/firstController.js"></script>
-    <script type="text/javascript" src="app2.js"></script>
+    <script type="text/javascript" src="directives/firstDirective.js"></script>
 <body>
     <!--ng-app directive show who is owner Angular application-->
-    <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController">
+    <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController" >
         <p>Name: <input type="text" ng-model="name"></p>
         <p>Hello {{name}}</p>
         <p>Application Owner: <span ng-bind="owner"></span></p>
         <p>Result 5+5: {{5+5}}</p>
         <p></p>
         <p>Owner FullName: {{firstName + " " + lastName}}</p>
+
+        <p>NG REPEAT</p>
+
+        <ul ng-init ="names=['Alice','Bob','Ann']">
+            <li ng-repeat="x in names"> {{x}}</li>
+        </ul>
+        <div ng-simple-directive></div>
+
+
+
     </div>
 
 
