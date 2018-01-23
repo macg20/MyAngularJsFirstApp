@@ -5,6 +5,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controllers/firstController.js"></script>
     <script type="text/javascript" src="directives/firstDirective.js"></script>
+    <script type="text/javascript" src="controllers/personController.js"></script>
 <body>
     <!--ng-app directive show who is owner Angular application-->
     <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController" >
@@ -21,6 +22,12 @@
             <li ng-repeat="x in names"> {{x}}</li>
         </ul>
         <div ng-simple-directive></div>
+
+        <div ng-controller="personController">
+          First Name  <input type="text" ng-model="inputName"><br>
+          Last Name  <input type="text" ng-model="inputLastName"><br>
+            <p>{{fullName()}}</p>
+        </div>
 
 
 
