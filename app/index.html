@@ -7,6 +7,8 @@
     <script type="text/javascript" src="directives/firstDirective.js"></script>
     <script type="text/javascript" src="controllers/personController.js"></script>
     <script type="text/javascript" src="controllers/namesController.js"></script>
+    <script type="text/javascript" src="controllers/priceController.js"></script>
+    <script type="text/javascript" src="controllers/orderbyController.js"></script>
  <body>
     <!--ng-app directive show who is owner Angular application-->
     <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController" >
@@ -16,6 +18,9 @@
         <p>Result 5+5: {{5+5}}</p>
         <p></p>
         <p>Owner FullName: {{firstName + " " + lastName}}</p>
+        <p>test scope first and lastname</p>
+        <pc ng-init = getFullName()> zmien imie - inicjalizacja</pc>
+        <p>{{firstAndLastName}}</p>
 
         <p>NG REPEAT</p>
 
@@ -37,6 +42,29 @@
 
         </div>
 
+        <div ng-controller="priceController"><p>Currency filter: {{price | currency}}</p>
+
+            <input type="text" ng-model="test">
+            <ul ng-init ="filteredPeople=['Alice','Bob','Ann']">
+                <li ng-repeat="x in filteredPeople | filter : test"> {{x}}</li>
+            </ul>
+            <div ng-simple-directive></div>
+        </div>
+
+        <div ng-controller="orderbyController">
+            <p>TYP SORTOWANIA: {{myOrderBy}}</p>
+            <table border="1" width="100%">
+                <tr>
+                    <th ng-click="orderByMe('name')">Name</th>
+                    <th ng-click="orderByMe('country')">Country</th>
+                </tr>
+
+                <tr ng-repeat="x in orderByNames | orderBy:myOrderBy">
+                    <td>{{x.name}}</td>
+                    <td>{{x.country}}</td>
+                </tr>
+            </table>
+        </div>
 
 
     </div>
