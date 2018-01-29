@@ -11,6 +11,7 @@
 <script type="text/javascript" src="controllers/orderbyController.js"></script>
 <script type="text/javascript" src="filters/myFilter.js"></script>
 <script type="text/javascript" src="controllers/locationCotroller.js"></script>
+<script type="text/javascript" src="controllers/simpleDownloadController.js"></script>
 <body>
 <!--ng-app directive show who is owner Angular application-->
 <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController">
@@ -76,7 +77,10 @@
     <div ng-controller="locationCotroller">
         <p>my location url is: {{myUrl}}</p>
     </div>
-
+    <div ng-controller="simpleDownloadController">
+        <h1 ng-click="fetch()">Download controller: Download Example usages</h1>
+        <p>status code: {{status}}</p>
+    </div>
 </div>
 
 
