@@ -12,6 +12,9 @@
 <script type="text/javascript" src="filters/myFilter.js"></script>
 <script type="text/javascript" src="controllers/locationCotroller.js"></script>
 <script type="text/javascript" src="controllers/simpleDownloadController.js"></script>
+<script type="text/javascript" src="directives/validationDirective.js"></script>
+<script type="text/javascript" src="controllers/redController.js"></script>
+<script type="text/javascript" src="controllers/mainController.js"></script>
 <body>
 <!--ng-app directive show who is owner Angular application-->
 <div ng-app="myApp" ng-init="owner='macg20'" ng-controller="firstController">
@@ -81,6 +84,19 @@
         <h1 ng-click="fetch()">Download controller: Download Example usages</h1>
         <p>status code: {{status}}</p>
     </div>
+    <div>
+       <form name="myForm">
+           <input name="myInput" type="text " ng-model="myInput" required validation-directive>
+       </form>
+        <p>The input's valid state is:</p>
+        <h1>{{myForm.myInput.$valid}}</h1>
+    </div>
+    <h1>ROUTING EXAMPLES</h1>
+    <a href="#/!">Main</a>
+    <a href="#!red">Red-start</a>
+
+
+    <div ng-view></div>
 </div>
 
 
